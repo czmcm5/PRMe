@@ -7,6 +7,7 @@ import {
 
 import Navbar1 from "./components/Navbar1"
 import Navbar2 from "./components/Navbar2"
+import Modal from "./components/Modal";
 
 import Welcome from "./pages/Welcome"
 import Help from "./pages/Help"
@@ -96,8 +97,16 @@ const router = createBrowserRouter([
         path: "/home/result",
         element: <Result/>,
       },
+
+      
     ]
   },
+
+  // 모달창
+  {
+    path: "/modal",
+    element: <Modal/>,
+  }
 ]);
 
 function App() {
