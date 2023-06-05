@@ -54,7 +54,7 @@ app.post("/register", async(req, res) => { // 데이터 받아서 전송
   const sendTest = { state: ""  };
 
   if (!name || !email || !password) { 
-    sendTest.d = "빈칸 없이 채워주세요.";
+    sendTest.state = "빈칸 없이 채워주세요.";
     res.json(sendTest);
   } else {
     // 비밀번호 길이 검사
@@ -87,7 +87,7 @@ app.post("/register", async(req, res) => { // 데이터 받아서 전송
               } else {
                 // 회원가입
                 db.query("INSERT INTO user (email, name, password) VALUES (?,?,?)", [email, name, password]);
-                sendTest.state = "확인완료";
+                sendTest.state = "가입 완료";
                 res.json(sendTest);
               }
             })
